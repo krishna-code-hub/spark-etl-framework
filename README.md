@@ -2,6 +2,16 @@
 Spark based ETL framework to perform SQL based transformation, Aggregation etc
 
 
+# Programming Language
+   Scala for Spark framework
+   Python for Airflow Scheduling
+   
+   
+# Configration files   
+   YAML based config files
+
+
+
 
 # Important Links
 
