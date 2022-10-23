@@ -1,0 +1,25 @@
+# Project exclude paths
+
+
+/project/target/
+/target/
+/target/scala-2.12/classes/
+.idea/*
+.idea/*/*
+.bsp
+
+# eclipse
+build
+.classpath
+.project
+.settings
+.worksheet
+
+# intellij idea
+.idea
+*.log
+*.iml
+*.ipr
+*.iws
+*.jar
+
