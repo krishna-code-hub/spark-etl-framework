@@ -1,0 +1,33 @@
+tableSchema:
+   - tablename: employee
+     description: "this is a sample table"
+     primary_key: emp_id
+     columns:
+        - name: emp_name
+          datatype: string
+          description: "this contains employee name"
+          not_null: true
+        - name: emp_id
+          datatype: int
+          description: "this contains employee id"
+          not_null: true
+        - name: emp_sal
+          datatype: int
+          description: "this contains employee salary"
+          not_null: true
+
+   - tablename: employee1
+     description: "this is a sample table"
+     primary_key: emp_id
+     columns:
+        - name: emp_name
+          datatype: string
+          not_null: true
+        - name: emp_id
+          datatype: int
+          description: "this contains employee id"
+          not_null: true
+        - name: emp_sal
+          datatype: int
+          description: "this contains employee salary"
+          not_null: true
