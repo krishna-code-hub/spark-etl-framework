@@ -19,3 +19,7 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % scala
 libraryDependencies += "com.fasterxml.jackson.dataformat" % "jackson-dataformat-yaml" % scala_version
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-annotations" % scala_version
 libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % scala_version
+libraryDependencies += "org.rogach" %% "scallop" % "3.5.1"
+libraryDependencies += "org.apache.logging.log4j" %% "log4j-core" % "2.18.0"
+libraryDependencies += "org.apache.logging.log4j" %% "log4j-api" % "2.18.0"
+libraryDependencies += "org.apache.logging.log4j" %% "log4j-api-scala_2.12" % "12.0"

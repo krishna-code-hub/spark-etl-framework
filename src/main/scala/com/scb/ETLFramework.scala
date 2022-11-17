@@ -26,12 +26,12 @@ object ETLFramework {
     val prevempDF = Seq(Employee(1, "krishna", "eee", "india", "software_engineer", "2022-10-01", "9999-12-31", "N")
       , Employee(2, "Preethi", "ece", "india", "software_engineer", "2022-10-01", "9999-12-31", "N")
       , Employee(3, "Vidyut", "eee", "india", "scientist", "2022-10-01", "9999-12-31", "N"),
-      Employee(4, "abhishek", "cse", "india", "software_engineer", "2022-10-01", "9999-12-31", "N")).toDF()
+        Employee(4, "abhishek", "cse", "india", "software_engineer", "2022-10-01", "9999-12-31", "N")).toDF()
 
     val newempDF = Seq(Employee(1, "krishna", "eee", "singapore", "software_engineer", "2022-10-22", "9999-12-31", "N")
       , Employee(2, "Preethi", "ece", "india", "software_engineer", "2022-10-22", "9999-12-31", "N")
       , Employee(3, "Vidyut", "eee", "india", "pilot", "2022-10-22", "9999-12-31", "N"),
-      Employee(5, "prasanna", "mech", "india", "software_engineer", "2022-10-22", "9999-12-31", "N")).toDF()
+        Employee(5, "prasanna", "mech", "india", "software_engineer", "2022-10-22", "9999-12-31", "N")).toDF()
 
     log.info("empDF")
 

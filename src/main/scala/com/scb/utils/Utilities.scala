@@ -4,7 +4,7 @@ import org.apache.spark.sql.{Column, DataFrame, SparkSession}
 import org.apache.spark.sql.functions.{col, column, concat_ws, md5}
 import org.apache.log4j.LogManager
 import com.scb.utils.Constants._
-
+import java.util.UUID
 
 object Utilities {
 
@@ -39,6 +39,12 @@ object Utilities {
     val nonPkColListRenamed = nonPkColList.map(c => appendString + c)
     val allColListRenamed = primaryKey ++ nonPkColListRenamed
     dataframe.toDF(allColListRenamed: _*)
+  }
+
+  //Generate UUID for the jobs
+  def generateUUID(): String = {
+    val uuid: UUID = UUID.randomUUID();
+    uuid.toString;
   }
 
 }
