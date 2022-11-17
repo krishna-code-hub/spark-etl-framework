@@ -11,13 +11,13 @@ config:
     rejection_threshold: 100
     run_order: 6
     source:
-      -sourceTableName: <some name>
-      -sourceSchemaName: <some schema if the dataset is File>
-      -columnDelimiter: <if source is a HDFS>
+        sourceTableName: XYZ
+        sourceSchemaName: <some schema if the dataset is File>
+        columnDelimiter: <if source is a HDFS>
     target:
-      -targetTableName: <Name of the target table>
-      -targetTableSchema: <File path of the target schema>
-      -targetKeyColumn: emp_id
+        targetTableName: <Name of the target table>
+        targetTableSchema: <File path of the target schema>
+        targetKeyColumn: emp_id
     validationRules:
       - validationGranualityLevel: table
         isRuleActive: true
@@ -33,96 +33,3 @@ config:
         isRuleActive: true
         uniqueness: 100
 
-
-  - process_name: CCMS~HK~CCMS_HK_CPS102~C_ACCT_BAL_MTRC~1
-    ctl_id: 20020
-    group_id: 2
-    country_code: HK
-    source_system_name: CCM
-    tQuery: <path of the sql>
-    process_type: txn
-    rejection_threshold: 100
-    run_order: 12
-    source:
-      -sourceTableName: <some name>
-      -sourceSchemaName: <optional some schema if the dataset is File>
-      -columnDelimiter: <if source is a HDFS>
-    target:
-      -targetTableName: <Name of the target table>
-      -targetColumnName: |
-        start_date string,end_date string,record_deleted_flag string,process_name string,process_id string,update_process_name string,update_process_id string,start_ts string,end_ts string,old_cust_id varchar(200),new_cust_id varchar(200),cust_key varchar(300),cust_id_type char(5),process_date string,data_src string,source_country_code string
-      -targetKeyColumn: old_cust_id
-    validationRules:
-      - validationGranualityLevel: table
-        isRuleActive: true
-        totalCountGte: 100
-        errorLevel: error
-        filterCondition: [process_date='2017-04-05',source_country_code='HK']
-      - validationGranualityLevel: column
-        columnName: new_cust_id
-        isRuleActive: true
-        completeness: 99
-      - validationGranualityLevel: column
-        columnName: new_cust_id
-        isRuleActive: true
-        uniqueness: 100
-
-  - process_name: CCMS~HK~CCMS_HK_CPS102~C_ACCT_MTRC~1
-    ctl_id: 20020
-    group_id: 2
-    country_code: HK
-    source_system_name: CCM
-    tQuery: <path of the sql>
-    target_table_name: c_acct_mtrc
-    process_type: txn
-    rejection_threshold: 100
-    run_order: 13
-    source:
-      -sourceTableName: <some name>
-      -sourceSchemaName: <optional some schema if the dataset is File>
-      -columnDelimiter: <if source is a HDFS>
-    target:
-      -targetTableName: <Name of the target table>
-      -targetColumnName: |
-        start_date string,end_date string,record_deleted_flag string,process_name string,process_id string,update_process_name string,update_process_id string,start_ts string,end_ts string,old_cust_id varchar(200),new_cust_id varchar(200),cust_key varchar(300),cust_id_type char(5),process_date string,data_src string,source_country_code string
-      -targetKeyColumn: old_cust_id
-    validationRules:
-      - validationGranualityLevel: table
-        isRuleActive: true
-        totalCountGte: 100
-        errorLevel: error
-        filterCondition: [process_date='2017-04-05',source_country_code='HK']
-      - validationGranualityLevel: column
-        columnName: update_process_id
-        isRuleActive: true
-        completeness: 99
-
-  - process_name: CCMS~HK~CCMS_HK_CPS102~C_ACCT_INT_MTRC~1
-    ctl_id: 20020
-    group_id: 2
-    country_code: HK
-    source_system_name: CCM
-    tQuery: <path of the sql>
-    target_table_name: c_acct_int_mtrc
-    process_type: maste
-    rejection_threshold: 100
-    run_order: 15
-    source:
-      -sourceTableName: <some name>
-      -sourceSchemaName: <optional some schema if the dataset is File>
-      -columnDelimiter: <if source is a HDFS>
-    target:
-      -targetTableName: <Name of the target table>
-      -targetColumnName: |
-        start_date string,end_date string,record_deleted_flag string,process_name string,process_id string,update_process_name string,update_process_id string,start_ts string,end_ts string,old_cust_id varchar(200),new_cust_id varchar(200),cust_key varchar(300),cust_id_type char(5),process_date string,data_src string,source_country_code string
-      -targetKeyColumn: old_cust_id
-    validationRules:
-      - validationGranualityLevel: table
-        isRuleActive: true
-        totalCountGte: 100
-        errorLevel: error
-        filterCondition: [process_date='2017-04-05',source_country_code='HK']
-      - validationGranualityLevel: column
-        columnName: cust_id_type
-        isRuleActive: true
-        completeness: 99

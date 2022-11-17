@@ -1,6 +1,7 @@
 package com.scb.configparser
 
-case class ValidationConfiguration(
+case class ValidationConfigParser(
+
   var validationGranualityLevel: Option[String],
   var columnName: Option[String],
   var isRuleActive: Option[String],
@@ -19,6 +20,7 @@ case class ValidationConfiguration(
   var customSql: Option[String],
   var errorLevel: Option[String],
   var filterCondition: Option[Any]
+
   ) {
 
   //require(filterCondition.isDefined, "Filter name should be defined to churn data based on the condition.")
